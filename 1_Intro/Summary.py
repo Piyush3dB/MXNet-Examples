@@ -22,6 +22,7 @@ sc1   = mx.symbol.SliceChannel(data=fc2  , num_outputs=10, squeeze_axis=0)
 
 ## Print summary
 mx.viz.print_summary(sc1)
+## Should print:
 # ____________________________________________________________________
 # Layer (type)              Output Shape    Param #     Previous Layer
 # ====================================================================
@@ -49,6 +50,7 @@ mx.viz.print_summary(sc1)
 shape = {}
 shape["data"]=(1,3,28,28)
 mx.viz.print_summary(sc1, shape)
+## Should print:
 # ____________________________________________________________________
 # Layer (type)              Output Shape    Param #     Previous Layer
 # ====================================================================

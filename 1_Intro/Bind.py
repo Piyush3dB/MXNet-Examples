@@ -69,3 +69,9 @@ ex.outputs[0].asnumpy()
 
 #print(net.list_arguments())
 
+## Show simple bind
+#http://mxnet.io/tutorials/python/mixed.html
+ # There is also function named simple_bind that simplifies this procedure. 
+ # This function first inferences the shapes of all free variables by using 
+ # the provided data shape, and then allocate and bind data, which can be 
+ # accessed by the attribute arg_arrays of the returned executor.
