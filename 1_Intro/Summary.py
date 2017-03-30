@@ -17,8 +17,9 @@ bn1   = mx.symbol.BatchNorm(   data=conv1)
 act1  = mx.symbol.Activation(  data=bn1  , act_type="relu")
 mp1   = mx.symbol.Pooling(     data=act1 , kernel=(2,2), stride=(2,2), pool_type='max')
 fc1   = mx.sym.FullyConnected( data=mp1  , bias=bias, num_hidden=10)
-fc2   = mx.sym.FullyConnected( data=fc1  , num_hidden=10)
+fc2   = mx.sym.FullyConnected( data=fc1  , num_hidden=10, attr={'lr_mult': '0.00'})
 sc1   = mx.symbol.SliceChannel(data=fc2  , num_outputs=10, squeeze_axis=0)
+
 
 ## Print summary
 mx.viz.print_summary(sc1)
