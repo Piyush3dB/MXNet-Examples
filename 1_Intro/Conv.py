@@ -20,14 +20,14 @@ c_exec = net.simple_bind(ctx=mx.cpu(), I=(1,1,5,5))
 
 ## Copy input arguments to executor
 args={}
-args['I'] = mx.nd.array([[1,2,2,1,0],
-                         [3,3,3,3,0],
-                         [3,0,0,2,2],
-                         [0,3,0,3,3],
-                         [2,2,2,3,2]]).reshape((1,1,5,5))
-args['K_weight'] = mx.nd.array([[0,1,2],
-                                [3,4,5],
-                                [6,7,8]]).reshape((1,1,3,3))
+args['I'] = mx.nd.array([1,2,2,1,0,
+                         3,3,3,3,0,
+                         3,0,0,2,2,
+                         0,3,0,3,3,
+                         2,2,2,3,2]).reshape((1,1,5,5))
+args['K_weight'] = mx.nd.array([0,1,2,
+                                3,4,5,
+                                6,7,8]).reshape((1,1,3,3))
 c_exec.copy_params_from(arg_params=args)
 
 ## Print arguments
